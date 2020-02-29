@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>339</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+    <pointsize>-1</pointsize>
+    <weight>75</weight>
+    <italic>false</italic>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow  {
+	background-color: rgb(30 ,30, 43);
+    border: 2px outset blue;
+    font: 45px;
+color: qlineargradient(spread:pad, x1:0.318, y1:0.0113636, x2:0.114, y2:0.835, stop:0 rgba(12, 196, 0, 255), stop:1 rgba(20, 128, 20, 255));
+	font: bold;
+	width: 300px;
+	height: 60px;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>60</y>
+      <width>270</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+background: rgb(60, 60, 60);
+text-color: rgb(255, 225, 255);
+font-color:  rgb(255, 225, 255);
+font: 20pt &quot;Times New Roman&quot;;
+border: 3 px;
+border-radius: 15px;
+}
+QLineEdit:hover {
+	background-color: rgb(11, 37, 98);
+	color: qlineargradient(spread:pad, x1:0.102273, y1:0.131, x2:0.966, y2:0.960091, stop:0 rgba(158, 162, 109, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QLineEdit:pressed  {
+	background-color: rgb(54, 54, 4);
+    border-style: inset;
+	color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.642045 rgba(48, 42, 88, 243), stop:1 rgba(255, 255, 255, 255));
+}</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>276</x>
+      <y>60</y>
+      <width>60</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox{
+background: rgb(60, 60, 60);
+ color: rgb(221, 225, 255);
+	font: 20pt &quot;Times New Roman&quot;;
+  border:2px;
+ border-radius: 15px;       
+
+}
+
+QSpinBox::up-button{width:25px;height:20 px;}
+QSpinBox::down-button{width:25px;height:20 px;}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>321</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+background: rgb(60, 60, 60);
+ color: rgb(221, 225, 255);
+ font-color:  rgb(255, 225, 255);
+font: 20pt &quot;Times New Roman&quot;;
+      border:2 px;   
+ border-radius: 15px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>130</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox{
+background: rgb(60, 60, 60);
+ color: rgb(221, 225, 255);
+	font: 20pt &quot;Times New Roman&quot;;
+border:2px;
+ border-radius: 15px;
+         
+}
+QSpinBox::up-button{width:25px;height:20 px;}
+QSpinBox::down-button{width:25px;height:20 px;}</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>321</width>
+      <height>123</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit{
+background: rgb(60, 60, 60);
+ color: rgb(221, 225, 255);
+ font-color:  rgb(255, 225, 255);
+font: 20pt &quot;Times New Roman&quot;;
+      border:2 px;   
+ border-radius: 15px;
+}</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>339</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
