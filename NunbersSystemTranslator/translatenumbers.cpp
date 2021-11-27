@@ -8,22 +8,22 @@ string TranslateNumbers::TranlateNonNaluralsPart(lDouble number, int system)
 {
 // функция для перевода ненатуральную часть числа в другую систему счисления
 //function for transferring the non-natural part of a number to another number system
-    string otvet;
+    string Answer;
     for(int i=0;i!=KolSimvPslZp;++i)
     {
         lDouble x=number*system;
         size_t y=size_t(x);
         number=x-y;
-        otvet.push_back(IntToChar(y));
+        Answer.push_back(IntToChar(y));
         if(!bool(number))
             break;
     }
-    return otvet;
+    return Answer;
 }
 string TranslateNumbers::TranslateToNumbersSystem(int system,lDouble number){
     //функция для перевода из 10 число в это  систему счислени
     //a function to convert the number from 10 numbers in this "argument:system" number system
-    string otvet="";
+    string Answer="";
     llInt Natural=llInt(number);
     lDouble values=number-Natural;
 
@@ -32,20 +32,20 @@ string TranslateNumbers::TranslateToNumbersSystem(int system,lDouble number){
         string::size_type ostatok=Natural%system;
         Natural/=system;
         char c=IntToChar(ostatok);
-        otvet.push_back(c);
+        Answer.push_back(c);
     }
-    reverse(otvet.begin(),otvet.end());
-    if(otvet.empty())
+    reverse(Answer.begin(),Answer.end());
+    if(Answer.empty())
     {
-        otvet="0";
+        Answer="0";
     }
 
     if(values==0)
     {
-        return otvet;
+        return Answer;
     }
     string s=TranlateNonNaluralsPart(values,system);
-    return otvet+'.'+s;
+    return Answer+'.'+s;
 }
 
 void TranslateNumbers::setKolSilv(int x)
@@ -60,12 +60,12 @@ TranslateNumbers::lDouble TranslateNumbers::TranslateNumbersSystemTo10(int syste
     auto point=find(str.begin(),str.end(),'.');
     string text(str.begin(),point);
     reverse(text.begin(),text.end());
-    lDouble otvet{0};
+    lDouble Answer{0};
 
     for(string::size_type i=0;i!=text.size();++i)
     {
         string::size_type x=CharToInt(text[i]);
-        otvet+=x*pow(lDouble(system1),i);
+        Answer+=x*pow(lDouble(system1),i);
     }
     if(point!=str.end())
     {
@@ -73,10 +73,10 @@ TranslateNumbers::lDouble TranslateNumbers::TranslateNumbersSystemTo10(int syste
         for(string::size_type i=0;i!=endText.size();++i)
         {
             string::size_type x=CharToInt(endText[i]);
-            otvet+=x*(lDouble(1)/pow((lDouble)system1,(i+1)));
+            Answer+=x*(lDouble(1)/pow((lDouble)system1,(i+1)));
         }
     }
-    return otvet;
+    return Answer;
 }
 string::size_type TranslateNumbers::CharToInt(char c)
 {
