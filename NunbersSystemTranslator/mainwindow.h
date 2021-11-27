@@ -21,7 +21,6 @@ private:
 
     Ui::MainWindow *ui;
     void resizeEvent(QResizeEvent*)override;
-    void paintEvent(QPaintEvent*)override;
 private slots:
     void slotPerevesti(QString);
     void slotClicSpin2(int);
