@@ -49,8 +49,6 @@ void MainWindow::resizeEvent(QResizeEvent *)
     int w=width(),h=height();
     int heights=41,wSpin=60;
 
-
-
     ui->EditReadValues->setGeometry(5,h*0.13,w-wSpin-10,heights);
     ui->SpinValuesSyst->setGeometry(w-65,h*0.13,wSpin,heights);
 
@@ -60,26 +58,25 @@ void MainWindow::resizeEvent(QResizeEvent *)
 
     ui->EditPrintValueNewSyst->setGeometry(10,h*0.67,w-20,heights*3);
 
-
 }
 
 
 
 void MainWindow::slotPerevesti(QString Text)
 {
-    QString Simvols="0123456789abcdefghijklmnopqrstuvwxyz";
-    QString SimvolsSystem="";
+    QString Signs="0123456789abcdefghijklmnopqrstuvwxyz";
+    QString NumSystSigns="";
 
     for (int i=0;i!=ui->SpinValuesSyst->value();++i)
     {
-        SimvolsSystem.push_back(Simvols[i]);
+        NumSystSigns.push_back(Signs[i]);
     }
-    qDebug()<<"ZNACH Simvols size="<<Simvols.size();
-    SimvolsSystem.push_back(".");
+    qDebug()<<"ZNACH Simvols size="<<Signs.size();
+    NumSystSigns.push_back(".");
 
     for (int i=0;i!=Text.size();++i)
     {
-        if(std::find(SimvolsSystem.begin(),SimvolsSystem.end(),Text[i])==SimvolsSystem.end()){
+        if(std::find(NumSystSigns.begin(),NumSystSigns.end(),Text[i])==NumSystSigns.end()){
 
         QMessageBox m(this);
         m.setText("Такого символа не бывает в "+QString::number(ui->SpinValuesSyst->value())+" с.с");
@@ -114,14 +111,10 @@ void MainWindow::slotPerevesti(QString Text)
     }
 
     auto Nums=numbers.TranslateToNumbersSystem(10,num);
-    auto otvet=numbers.TranslateToNumbersSystem(ui->SpinValuesToSyst->value(),num);
-    QString n,m;
+    auto Answer=numbers.TranslateToNumbersSystem(ui->SpinValuesToSyst->value(),num);
 
-    n=n.fromStdString(otvet);
-    m=m.fromStdString(Nums);
-
-    ui->EditValueTo10Syst->setText(m);
-    ui->EditPrintValueNewSyst->setText(n);
+    ui->EditValueTo10Syst->setText(QString::fromStdString(Nums));
+    ui->EditPrintValueNewSyst->setText(QString::fromStdString(Answer));
     ui->LabelPrintValue->setText("Ответ: значения в "+ui->SpinValuesToSyst->text()+"-й с.с");
     TextLine=Text;
 
