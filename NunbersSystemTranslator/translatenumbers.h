@@ -21,6 +21,7 @@ private:
     std::string::size_type CharToInt(char);
     char IntToChar(std::string::size_type);
     int KolSimvPslZp=18;
+    std::string allUseSimvols="0123456789abcdefghijklmnopqrstuvwxyz";
 };
 
 #endif // TRANSLATENUMBERS_H

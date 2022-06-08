@@ -16,7 +16,9 @@ string TranslateNumbers::TranlateNonNaluralsPart(lDouble number, int system)
         number=x-y;
         Answer.push_back(IntToChar(y));
         if(!bool(number))
+        {
             break;
+        }
     }
     return Answer;
 }
@@ -80,12 +82,9 @@ TranslateNumbers::lDouble TranslateNumbers::TranslateNumbersSystemTo10(int syste
 }
 string::size_type TranslateNumbers::CharToInt(char c)
 {
-    string Simvols="0123456789abcdefghijklmnopqrstuvwxyz";
-    string::size_type s=Simvols.find(c);
-    return s;
+    return allUseSimvols.find(c);
 }
 char TranslateNumbers::IntToChar(string::size_type x)
 {
-    string Simvols="0123456789abcdefghijklmnopqrstuvwxyz";
-    return Simvols[x];
+    return allUseSimvols[x];
 }
